@@ -5,8 +5,8 @@ class AnnotatorController < ApplicationController
   layout 'ontology'
 
   # REST_URI is defined in application_controller.rb
-  #ANNOTATOR_URI = REST_URI + "/annotator"
-  ANNOTATOR_URI = $ANNOTATOR_URL
+  ANNOTATOR_URI = REST_URI + "/annotator"
+  # ANNOTATOR_URI = $ANNOTATOR_URL
 
   def index
     @semantic_types_for_select = []
@@ -43,6 +43,7 @@ class AnnotatorController < ApplicationController
 
     start = Time.now
     query = ANNOTATOR_URI
+    binding.pry
     query += "?text=" + CGI.escape(text_to_annotate)
     query += "&apikey=" + API_KEY
     #query += "&include=prefLabel"
