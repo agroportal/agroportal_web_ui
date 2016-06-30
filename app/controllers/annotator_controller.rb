@@ -43,7 +43,6 @@ class AnnotatorController < ApplicationController
 
     start = Time.now
     query = ANNOTATOR_URI
-    binding.pry
     query += "?text=" + CGI.escape(text_to_annotate)
     query += "&apikey=" + API_KEY
     #query += "&include=prefLabel"
