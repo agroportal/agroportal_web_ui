@@ -5,6 +5,13 @@
     = t('home.annotate.intro').html_safe.nil? || t('home.annotate.intro').html_safe.empty? ? "Get annotations for biomedical text with concepts from the ontologies #{help_icon("/help#Annotator_Tab")}".html_safe : t('home.annotate.intro').html_safe
   %div{:style => "padding-bottom: 1em;"}
     %div{:style => "width: 610px;"}
+
+      = label_tag :source_url, "Enter URL of a PDF file"
+      %br/
+      = url_field :annotation, :source_url, style: "width: 600px"
+      %br/
+      %br/
+
       %a#insert_text_link{:href => "javascript:void(0);", :style => "font-size: 8pt; text-decoration: none; float: right; margin-bottom: 3px;"} insert sample text
     - textarea_title = "Enter or paste text to be annotated"
     = text_area :annotation, :text, :title => textarea_title, :rows => 15, :style => "box-shadow: 0 0 3px gray; padding: 5px; width: 600px;", :class => "help_text"
