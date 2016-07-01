@@ -26,7 +26,9 @@ class AnnotatorController < ApplicationController
     params[:max_level] ||= 0
     params[:ontologies] ||= []
     params[:semantic_types] ||= []
-    text_to_annotate = params[:text].strip.gsub("\r\n", " ").gsub("\n", " ")
+
+    params[:source_url] ||= ""
+    text_to_annotate = params[:text].strip.gsub("\r\n", " ").gsub("\n", " ") if params[:source_url].empty?
 
     options = { :ontologies => params[:ontologies],
                 :class_hierarchy_max_level => params[:class_hierarchy_max_level].to_i,
@@ -43,7 +45,13 @@ class AnnotatorController < ApplicationController
 
     start = Time.now
     query = ANNOTATOR_URI
-    query += "?text=" + CGI.escape(text_to_annotate)
+
+    if text_to_annotate
+      query += "?text=" + CGI.escape(text_to_annotate)
+    else
+      query += "?source_url=" + CGI.escape(params[:source_url])
+    end
+
     query += "&apikey=" + API_KEY
     #query += "&include=prefLabel"
     # Include= prefLabel causes an internal error when retrieving mappings
