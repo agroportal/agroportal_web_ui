@@ -26,7 +26,6 @@ class AnnotatorController < ApplicationController
     params[:max_level] ||= 0
     params[:ontologies] ||= []
     params[:semantic_types] ||= []
-
     params[:source_url] ||= ""
     text_to_annotate = params[:text].strip.gsub("\r\n", " ").gsub("\n", " ") if params[:source_url].empty?
 
@@ -67,7 +66,11 @@ class AnnotatorController < ApplicationController
     query += "&whole_word_only=" + options[:whole_word_only].to_s unless options[:whole_word_only].empty?
     query += "&exclude_synonyms=" + options[:exclude_synonyms].to_s unless options[:exclude_synonyms].empty?
     query += "&ncbo_slice=" + options[:ncbo_slice].to_s unless options[:ncbo_slice].empty?
-    
+
+
+    binding.pry
+
+
     annotations = parse_json(query) # See application_controller.rb
     #annotations = LinkedData::Client::HTTP.get(query)
     LOG.add :debug, "Query: #{query}"
