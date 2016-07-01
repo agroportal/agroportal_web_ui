@@ -40,8 +40,9 @@ function get_annotations() {
   jQuery("#annotator_error").html("");
 
   // Validation
-  if (jQuery("#annotation_text").val() === jQuery("#annotation_text").attr("title")) {
-    jQuery("#annotator_error").html("Please enter text to annotate");
+  if ( !jQuery("#annotation_source_url").val() && 
+        jQuery("#annotation_text").val() ===  jQuery("#annotation_text").attr("title") ) {
+    jQuery("#annotator_error").html("Please enter some text or the URL to a PDF file for annotation");
     return;
   }
 
