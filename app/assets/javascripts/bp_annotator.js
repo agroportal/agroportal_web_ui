@@ -556,7 +556,7 @@ function get_text_markup(text, from, to) {
     match_span = '<span style="color: rgb(153,153,153);">',
     match_markup_span = '<span style="color: rgb(35, 73, 121); font-weight: bold; padding: 2px 0px;">',
     text_markup = match_markup_span + text_match + "</span>";
-  //console.log('text markup: ' + text_markup);
+
   return match_span + text_prefix + text_markup + text_suffix + "</span>";
 }
 
@@ -576,7 +576,7 @@ function get_annotation_rows(annotation, params) {
   // data dependent var declarations
   var cls = get_class_details(annotation.annotatedClass);
   jQuery.each(annotation.annotations, function(i, a) {
-    text_markup = get_text_markup(params.text, a.from, a.to);
+    text_markup = get_text_markup(a.text, a.from, a.to);
     match_type = match_type_translation[a.matchType.toLowerCase()] || 'direct';
     cells = [cls.cls_link, cls.ont_link, match_type, cls.semantic_types, text_markup, cls.cls_link, cls.ont_link];
     rows.push(cells);
@@ -628,7 +628,7 @@ function get_annotation_rows_from_raw(annotation, params) {
     rows.push(cells);
   } else {
     jQuery.each(annotation.annotations, function(i, a) {
-      text_markup = get_text_markup(params.text, a.from, a.to);
+      text_markup = get_text_markup(a.text, a.from, a.to);
       match_type = match_type_translation[a.matchType.toLowerCase()] || 'direct';
       cells = [cls.cls_link, cls.ont_link, match_type, cls.semantic_types, text_markup, cls.cls_link, cls.ont_link, get_annotation_score(annotation)];
       rows.push(cells);
