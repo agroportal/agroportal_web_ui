@@ -67,14 +67,10 @@ class AnnotatorController < ApplicationController
     query += "&exclude_synonyms=" + options[:exclude_synonyms].to_s unless options[:exclude_synonyms].empty?
     query += "&ncbo_slice=" + options[:ncbo_slice].to_s unless options[:ncbo_slice].empty?
 
-
-    binding.pry
-
-
     annotations = parse_json(query) # See application_controller.rb
     #annotations = LinkedData::Client::HTTP.get(query)
-    LOG.add :debug, "Query: #{query}"
-    LOG.add :debug, "Retrieved #{annotations.length} annotations: #{Time.now - start}s"
+    # LOG.add :debug, "Query: #{query}"
+    # LOG.add :debug, "Retrieved #{annotations.length} annotations: #{Time.now - start}s"
     if annotations.empty? || params[:raw] == "true"
       # TODO: if params contains select ontologies and/or semantic types, only return those selected.
       response = {

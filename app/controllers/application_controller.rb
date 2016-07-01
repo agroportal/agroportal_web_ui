@@ -555,7 +555,7 @@ class ApplicationController < ActionController::Base
     ont = Rails.cache.read(id)
     return ont unless ont.nil?
     # No cache or it has expired
-    LOG.add :debug, "No cache or expired cache for ontology: #{id}"
+    # LOG.add :debug, "No cache or expired cache for ontology: #{id}"
     ont = {}
     ont[:id] = id
     ont[:uri] = id
