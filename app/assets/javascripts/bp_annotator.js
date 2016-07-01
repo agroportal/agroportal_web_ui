@@ -59,6 +59,7 @@ function get_annotations() {
   var params = {},
     ont_select = jQuery("#ontology_ontologyId");
 
+  params.source_url = jQuery("#annotation_source_url").val();
   params.text = jQuery("#annotation_text").val();
   params.ontologies = (ont_select.val() === null) ? [] : ont_select.val();
   params.longest_only = jQuery("#longest_only").is(':checked');
