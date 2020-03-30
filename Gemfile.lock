@@ -111,7 +111,6 @@ GEM
       railties (>= 3.2.16)
     json (1.8.6)
     libv8 (3.16.14.19)
-    libv8 (3.16.14.19-x86_64-linux)
     logstash-event (1.1.5)
     logstash-logger (0.3.0)
       logstash-event
@@ -172,7 +171,7 @@ GEM
       activesupport (= 4.2.1)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
-    rake (11.1.2)
+    rake (13.0.1)
     rdoc (4.2.2)
       json (~> 1.4)
     recaptcha (0.4.0)
