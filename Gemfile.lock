@@ -96,7 +96,8 @@ GEM
     flamegraph (0.9.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
-    haml (4.0.7)
+    haml (5.0.0)
+      temple (>= 0.8.0)
       tilt
     hpricot (0.8.6)
     http-cookie (1.0.2)
@@ -111,7 +112,6 @@ GEM
       railties (>= 3.2.16)
     json (1.8.6)
     libv8 (3.16.14.19)
-    libv8 (3.16.14.19-x86_64-linux)
     logstash-event (1.1.5)
     logstash-logger (0.3.0)
       logstash-event
@@ -201,6 +201,7 @@ GEM
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
     stackprof (0.2.9)
+    temple (0.8.2)
     therubyracer (0.12.3)
       libv8 (~> 3.16.14.15)
       ref
@@ -210,7 +211,7 @@ GEM
       rack (>= 1, < 3)
     thor (0.19.1)
     thread_safe (0.3.6)
-    tilt (2.0.5)
+    tilt (2.0.10)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
     uglifier (4.2.0)
@@ -232,7 +233,7 @@ DEPENDENCIES
   cube-ruby
   dalli
   flamegraph
-  haml (~> 4.0.0)
+  haml (~> 5.0.0)
   hpricot (~> 0.8.6)
   i18n (~> 0)
   iconv
