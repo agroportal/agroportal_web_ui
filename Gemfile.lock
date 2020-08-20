@@ -89,7 +89,7 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     eventmachine (1.2.0.1)
-    excon (0.56.0)
+    excon (0.73.0)
     execjs (2.7.0)
     faraday (0.12.1)
       multipart-post (>= 1.2, < 3)
@@ -111,7 +111,6 @@ GEM
       railties (>= 3.2.16)
     json (1.8.6)
     libv8 (3.16.14.19)
-    libv8 (3.16.14.19-x86_64-linux)
     logstash-event (1.1.5)
     logstash-logger (0.3.0)
       logstash-event
