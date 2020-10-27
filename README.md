@@ -1,3 +1,7 @@
+This project is now archived. See https://github.com/ontoportal-lirmm/bioportal_web_ui for follwups.
+================
+
+
 bioportal_web_ui
 ================
 
